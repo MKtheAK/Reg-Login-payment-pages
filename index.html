@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homepage</title>
+    <link rel="stylesheet" type="text/css" href="a.css">
+	<script>
+		function validation(){
+			var name = document.login.username.value;
+			var ps = document.login.password.value;
+
+			if(name==null || name==""){
+				alert("Please enter userID");
+				return false;
+			}
+
+			else if(ps==null || ps==""){
+				alert("Please fill password");
+				return false;  
+			}
+
+			else if(ps.length<6){
+				alert("Please fill atleast 6 character");
+				return false;
+			}
+
+			else{
+				alert("login successfully");
+			}
+		}
+	</script>
+</head>
+<body>
+	<h2 style="text-align: center;">Login</h2>
+	<form name="login" onsubmit="return validation()">
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username"><br><br>
+
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password"><br><br>
+
+		<input type="submit" value="Login">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="register.html">Signup</a>
+		<a href="payment.html" style="float: right;">Payment</a>
+
+		
+	</form>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
